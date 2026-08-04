@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 560" role="img" aria-labelledby="title desc">
+  <title id="title">Безопасная работа с ИИ</title>
+  <desc id="desc">Фиолетовый щит с замком, лупой и тремя отметками проверки</desc>
+  <defs>
+    <linearGradient id="shieldFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#6046d7"/>
+    </linearGradient>
+    <linearGradient id="rimFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d8ccff"/>
+      <stop offset="1" stop-color="#8a6ff0"/>
+    </linearGradient>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#21183f" flood-opacity=".2"/>
+    </filter>
+  </defs>
+
+  <g id="shield" filter="url(#softShadow)">
+    <path d="M356 36 548 108v136c0 133-76 230-192 282-116-52-192-149-192-282V108L356 36Z" fill="url(#rimFill)"/>
+    <path d="M356 67 519 128v116c0 112-61 195-163 244-102-49-163-132-163-244V128L356 67Z" fill="url(#shieldFill)" stroke="#5137c4" stroke-width="5"/>
+  </g>
+
+  <g id="lock" filter="url(#softShadow)">
+    <path d="M298 246v-42c0-43 25-72 58-72s58 29 58 72v42" fill="none" stroke="#fff" stroke-width="28" stroke-linecap="round"/>
+    <rect x="273" y="229" width="166" height="145" rx="30" fill="#fff"/>
+    <circle cx="356" cy="290" r="17" fill="#6046d7"/>
+    <path d="M346 302h20l8 38h-36l8-38Z" fill="#6046d7"/>
+  </g>
+
+  <g id="magnifier" filter="url(#softShadow)">
+    <circle cx="182" cy="276" r="106" fill="#f3f0ff" fill-opacity=".9" stroke="url(#rimFill)" stroke-width="30"/>
+    <path d="m252 351 96 104" fill="none" stroke="#8065e8" stroke-width="38" stroke-linecap="round"/>
+    <path d="M115 224c24-35 67-52 106-41" fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round" opacity=".72"/>
+  </g>
+
+  <g id="checks" fill="#fff" stroke="#ede9ff" stroke-width="4" filter="url(#softShadow)">
+    <circle id="check-1" cx="512" cy="365" r="54"/>
+    <circle id="check-2" cx="603" cy="313" r="48"/>
+    <circle id="check-3" cx="594" cy="421" r="43"/>
+  </g>
+  <g fill="none" stroke="#7257df" stroke-width="15" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m484 365 20 21 39-46"/>
+    <path d="m579 313 18 18 33-39"/>
+    <path d="m572 422 16 16 30-35"/>
+  </g>
+</svg>

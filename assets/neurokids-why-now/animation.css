@@ -1,0 +1,66 @@
+.why-now__visual {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.why-now__asset {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: min(92%, 820px);
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  animation: why-now-float 5.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.why-now__visual:nth-of-type(even) .why-now__asset {
+  animation-delay: -2.4s;
+}
+
+.why-now__visual:hover .why-now__asset {
+  transform: translate(-50%, -52%) scale(1.035) rotate(-1deg);
+}
+
+.why-now__security #magnifier {
+  transform-origin: 250px 350px;
+  animation: magnifier-scan 4.8s ease-in-out infinite;
+}
+
+.why-now__security #check-1,
+.why-now__security #check-2,
+.why-now__security #check-3 {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: check-pop 3.6s ease-in-out infinite both;
+}
+
+.why-now__security #check-2 { animation-delay: .28s; }
+.why-now__security #check-3 { animation-delay: .56s; }
+
+@keyframes why-now-float {
+  0%, 100% { transform: translate(-50%, -50%) rotate(-.6deg); }
+  50% { transform: translate(-50%, -54%) rotate(.7deg); }
+}
+
+@keyframes magnifier-scan {
+  0%, 100% { transform: translate(-8px, 5px) rotate(-3deg); }
+  50% { transform: translate(22px, -12px) rotate(4deg); }
+}
+
+@keyframes check-pop {
+  0%, 18% { opacity: 0; transform: scale(.72); }
+  32%, 82% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(.9); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .why-now__asset,
+  .why-now__security #magnifier,
+  .why-now__security [id^="check-"] {
+    animation: none;
+  }
+}
