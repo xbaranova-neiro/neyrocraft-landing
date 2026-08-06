@@ -2,21 +2,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const popup = document.getElementById('popup');
   const mobileCta = document.querySelector('.mobile-cta');
   const preorderSection = document.getElementById('apply') || document.getElementById('preorder');
+  const DEFAULT_WIDGET = '1639295';
 
   if (!popup) return;
 
-  const openPopup = () => {
+  const showWidget = (widgetId) => {
+    popup.querySelectorAll('.widget-host').forEach((host) => {
+      const match = host.getAttribute('data-widget') === widgetId;
+      host.hidden = !match;
+      if (match) {
+        host.style.height = 'auto';
+        const iframe = host.querySelector('iframe');
+        if (iframe && parseInt(iframe.style.height, 10) < 100) {
+          iframe.style.height = '600px';
+        }
+      }
+    });
+  };
+
+  const openPopup = (btn) => {
+    const widgetId = (btn && btn.getAttribute('data-widget')) || DEFAULT_WIDGET;
+    showWidget(widgetId);
+
     popup.classList.add('open');
     popup.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
     if (mobileCta) mobileCta.hidden = true;
-
-    const host = popup.querySelector('.widget-host');
-    if (host) host.style.height = 'auto';
-    const iframe = popup.querySelector('iframe');
-    if (iframe && parseInt(iframe.style.height, 10) < 100) {
-      iframe.style.height = '600px';
-    }
   };
 
   const closePopup = () => {
@@ -27,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   document.querySelectorAll('.js-open-popup').forEach((btn) => {
-    btn.addEventListener('click', openPopup);
+    btn.addEventListener('click', () => openPopup(btn));
   });
 
   document.querySelectorAll('.js-close-popup').forEach((btn) => {

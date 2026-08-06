@@ -960,6 +960,10 @@ img {
   min-height: 0;
 }
 
+.widget-host[hidden] {
+  display: none !important;
+}
+
 .widget-host iframe {
   width: 100% !important;
   min-height: 400px;
